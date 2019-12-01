@@ -22,7 +22,7 @@ int main (){
 	   uartConfig (UART_USB, 9600);
 	   uartConfig (UART_232, 9600);
 	  
-	   printf( "Inicio exitoso: %d\r\n" );
+	   printf( "Inicio exitoso: \r\n" );
 
 	   while(1) {
 		   uartWriteByte( UART_232, 'C' );  // Envia 'C'
