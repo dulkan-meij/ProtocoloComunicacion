@@ -12,7 +12,7 @@ int main (){
 	   printf( "Inicio exitoso:\r\n" );
 
 	   char dato[]=" ";
-	   char recibirfindelinea[] = "\r\n";
+	   char recibirhastafindelinea[] = "\r\n";
 	   uint32_t size =115;
 	   uint32_t *tamanio= &size;
 
@@ -20,8 +20,8 @@ int main (){
 
 		   waitTextState = UART_RECEIVE_STRING_CONFIG;
 		   waitText.state = UART_RECEIVE_STRING_CONFIG;
-		   waitText.string =  recibirfindelinea;
-		   waitText.stringSize = sizeof(recibirfindelinea);
+		   waitText.string =  recibirhastafindelinea;
+		   waitText.stringSize = sizeof(recibirhastafindelinea);
 		   waitText.timeout = 10000;
 
 		  uartWriteByte( UART_232, 'C' );  // Envia 'C' para que empiece modo de transmision continuo
