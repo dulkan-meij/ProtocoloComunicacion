@@ -19,21 +19,24 @@ int main (){
 
 	   while(1) {
 
-		   waitTextState = UART_RECEIVE_STRING_CONFIG;
-		   waitText.state = UART_RECEIVE_STRING_CONFIG;
-		   waitText.string =  recibirhastafindelinea;
-		   waitText.stringSize = sizeof(recibirhastafindelinea);
-		   waitText.timeout = 10000;
+	  		   waitTextState = UART_RECEIVE_STRING_CONFIG;
+	  		   waitText.state = UART_RECEIVE_STRING_CONFIG;
+	  		   waitText.string =  recibirhastafindelinea;
+	  		   waitText.stringSize = sizeof(recibirhastafindelinea);
+	  		   waitText.timeout = 10000;
 
-		  uartWriteByte( UART_232, 'C' );  // Envia 'C' para que empiece modo de transmision continuo
+	  		  uartWriteByte( UART_232, 'C' );  // Envia 'C' para que empiece modo de transmision continuo
 
-		 if (receiveBytesUntilReceiveStringOrTimeout( UART_232, &waitText , &dato, *tamanio )){
+	  		 receiveBytesUntilReceiveStringOrTimeout( UART_232, &waitText , dato, tamanio );
 
-           // Se reenvia el dato a la UART_USB realizando un eco de lo que llega
- 
-	     uartWriteByte( UART_USB, dato );
-	     uartWriteByte( UART_232, 'r' );  // Envia 'r' para detener transimision
-	    
-	        }
-	        }
-	     }
+	         // Se reenvia el dato a la UART_USB realizando un eco de lo que llega
+
+	  	     printf( "La cedana es %s: \r\n", dato );
+
+	  	     uartWriteByte( UART_232, 'r' );  // Envia 'r' para detener transimision
+	  	   delay (1000);
+	  		 }
+
+}
+
+
