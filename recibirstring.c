@@ -13,8 +13,8 @@ int main (){
 
 	   char dato[]=" ";
 	   char recibirhastafindelinea[] = "\r\n";
-	   uint32_t size =115;
-	   uint32_t *tamanio:
+	   int32_t size= sizeof (dato);
+	   int32_t *tamanio:
 	   tamanio= &size;
 
 	   while(1) {
