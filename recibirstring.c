@@ -29,7 +29,7 @@ int main (){
 
 	  		 receiveBytesUntilReceiveStringOrTimeout( UART_232, &waitText , dato, tamanio );
 
-	         // Se reenvia el dato a la UART_USB realizando un eco de lo que llega
+	        
 
 	  	     printf( "La cedana es %s: \r\n", dato );
 
