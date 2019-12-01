@@ -29,12 +29,12 @@ int main (){
 
 	  		 receiveBytesUntilReceiveStringOrTimeout( UART_232, &waitText , dato, tamanio );
 
-	        
+	                   uartWriteByte( UART_USB, dato );
 
-	  	     printf( "La cedana es %s: \r\n", dato );
+	  	    // printf( "La cedana es %s: \r\n", dato );
 
 	  	     uartWriteByte( UART_232, 'r' );  // Envia 'r' para detener transimision
-	  	   delay (1000);
+	  	   delay (1000); // a los fines de prueba
 	  		 }
 
 }
